@@ -2,7 +2,7 @@
 name = "int"
 version = "0.1.0"
 authors = ["Sergey Shandar"]
-description = "Base-2 functions"
+description = "Integer traits"
 license = "Apache-2.0"
 repository = "https://github.com/rust-common/int"
 
