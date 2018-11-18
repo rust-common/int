@@ -1,8 +1,7 @@
 extern crate num_traits;
 
-use num_traits::cast::AsPrimitive;
-
 /// ## Examples
+///
 /// ```
 /// use int::UInt;
 /// assert_eq!(u8::BIT_COUNT, 8);
@@ -12,16 +11,15 @@ use num_traits::cast::AsPrimitive;
 /// assert_eq!(u128::BIT_COUNT, 128);
 /// ```
 pub trait UInt where
-    Self: AsPrimitive<u8> +
-        Eq +
-        std::cmp::Ord +
+    Self: num_traits::cast::AsPrimitive<u8> +
+        num_traits::PrimInt +
+        num_traits::sign::Unsigned +
         std::ops::AddAssign +
-        std::ops::BitOr<Output = Self> +
         std::ops::DivAssign +
         std::ops::Shl<u8, Output = Self> +
+        std::ops::ShlAssign<u8> +
         std::ops::Shr<u8, Output = Self> +
         std::ops::ShrAssign<u8> +
-        std::ops::Sub<Output = Self> +
         std::ops::SubAssign<Self>
 {
     const _0: Self;
