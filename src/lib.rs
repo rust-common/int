@@ -16,7 +16,7 @@ pub trait UInt where
         Eq +
         std::cmp::Ord +
         std::ops::AddAssign +
-        std::ops::BitOr +
+        std::ops::BitOr<Output = Self> +
         std::ops::DivAssign +
         std::ops::Shl<u8, Output = Self> +
         std::ops::Shr<u8, Output = Self> +
