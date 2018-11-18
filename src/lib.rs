@@ -14,7 +14,7 @@ use num_traits::cast::AsPrimitive;
 pub trait UInt where
     Self: AsPrimitive<u8> +
         Eq +
-        num_traits::One +
+        std::cmp::Ord +
         std::ops::AddAssign +
         std::ops::DivAssign +
         std::ops::Shl<u8, Output = Self> +
