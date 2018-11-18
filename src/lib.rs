@@ -9,7 +9,7 @@ pub trait UInt where
         std::ops::DivAssign +
         std::ops::Shl<u8, Output = Self> +
         std::ops::ShrAssign<u8> +
-        std::ops::Sub<Self> +
+        std::ops::Sub<Output = Self> +
         std::ops::SubAssign<Self>
 {
     const _0: Self;
