@@ -7,6 +7,7 @@ pub trait UInt where
         Eq +
         std::ops::SubAssign<Self> +
         std::ops::AddAssign +
+        std::ops::DivAssign +
         std::ops::Shl<u8, Output = Self> +
         std::ops::ShrAssign<u8>
 {
@@ -38,5 +39,10 @@ impl UInt for u64 {
 impl UInt for u128 {
     const _0: u128 = 0;
     const _1: u128 = 1;
+    fn from_u8(v: u8) -> Self { v as Self }
+}
+impl UInt for usize {
+    const _0: usize = 0;
+    const _1: usize = 1;
     fn from_u8(v: u8) -> Self { v as Self }
 }
