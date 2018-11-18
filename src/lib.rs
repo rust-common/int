@@ -5,11 +5,12 @@ use num_traits::cast::AsPrimitive;
 pub trait UInt where
     Self: AsPrimitive<u8> +
         Eq +
-        std::ops::SubAssign<Self> +
         std::ops::AddAssign +
         std::ops::DivAssign +
         std::ops::Shl<u8, Output = Self> +
-        std::ops::ShrAssign<u8>
+        std::ops::ShrAssign<u8> +
+        std::ops::Sub<Self> +
+        std::ops::SubAssign<Self>
 {
     const _0: Self;
     const _1: Self;
