@@ -2,6 +2,15 @@ extern crate num_traits;
 
 use num_traits::cast::AsPrimitive;
 
+/// ## Examples
+/// ```
+/// use int::UInt;
+/// assert_eq!(u8::BIT_COUNT, 8);
+/// assert_eq!(u16::BIT_COUNT, 16);
+/// assert_eq!(u32::BIT_COUNT, 32);
+/// assert_eq!(u64::BIT_COUNT, 64);
+/// assert_eq!(u128::BIT_COUNT, 128);
+/// ```
 pub trait UInt where
     Self: AsPrimitive<u8> +
         Eq +
@@ -14,6 +23,7 @@ pub trait UInt where
 {
     const _0: Self;
     const _1: Self;
+    const BIT_COUNT: u8 = (std::mem::size_of::<Self>() * 8) as u8;
     fn from_u8(v: u8) -> Self;
 }
 
