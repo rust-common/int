@@ -18,6 +18,7 @@ pub trait UInt where
         std::ops::AddAssign +
         std::ops::DivAssign +
         std::ops::Shl<u8, Output = Self> +
+        std::ops::Shr<u8, Output = Self> +
         std::ops::ShrAssign<u8> +
         std::ops::Sub<Output = Self> +
         std::ops::SubAssign<Self>
