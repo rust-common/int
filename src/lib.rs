@@ -10,17 +10,17 @@ extern crate num_traits;
 /// assert_eq!(u64::BIT_COUNT, 64);
 /// assert_eq!(u128::BIT_COUNT, 128);
 /// ```
-pub trait UInt where
-    Self: num_traits::cast::AsPrimitive<u8> +
-        num_traits::PrimInt +
-        num_traits::sign::Unsigned +
-        std::ops::AddAssign +
-        std::ops::DivAssign +
-        std::ops::Shl<u8, Output = Self> +
-        std::ops::ShlAssign<u8> +
-        std::ops::Shr<u8, Output = Self> +
-        std::ops::ShrAssign<u8> +
-        std::ops::SubAssign<Self>
+pub trait UInt:
+    num_traits::cast::AsPrimitive<u8> +
+    num_traits::PrimInt +
+    num_traits::sign::Unsigned +
+    std::ops::AddAssign +
+    std::ops::DivAssign +
+    std::ops::Shl<u8, Output = Self> +
+    std::ops::ShlAssign<u8> +
+    std::ops::Shr<u8, Output = Self> +
+    std::ops::ShrAssign<u8> +
+    std::ops::SubAssign<Self>
 {
     const _0: Self;
     const _1: Self;
