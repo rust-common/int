@@ -20,7 +20,8 @@ pub trait UInt:
     std::ops::ShlAssign<u8> +
     std::ops::Shr<u8, Output = Self> +
     std::ops::ShrAssign<u8> +
-    std::ops::SubAssign<Self>
+    std::ops::SubAssign<Self> +
+    std::fmt::Display
 {
     const _0: Self;
     const _1: Self;
